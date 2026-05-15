@@ -1,53 +1,54 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import Icon from "@/components/ui/icon"
 
 const features = [
   {
-    title: "Адаптивная нейрообработка",
-    description: "Самооптимизирующиеся алгоритмы, которые обучаются на нейронных паттернах и улучшают интерпретацию сигналов.",
-    icon: "brain",
-    badge: "ИИ",
+    title: "Запись голоса в фоне",
+    description: "Запускай запись и убирай телефон — приложение продолжает работать в фоне, фиксируя каждое слово лекции или совещания.",
+    icon: "Mic",
+    badge: "Фоновый режим",
   },
   {
-    title: "Медицинская защита",
-    description: "Шифрование по стандартам FDA со сквозной защитой конфиденциальных нейронных данных.",
-    icon: "lock",
-    badge: "Сертификат",
+    title: "Конспект из видео",
+    description: "Вставь ссылку на любое видео с YouTube или загрузи файл — AI извлечёт суть и оформит в понятный конспект.",
+    icon: "Video",
+    badge: "Видео",
   },
   {
-    title: "Интуитивное управление",
-    description: "Естественная трансляция мыслей в действия с откликом менее миллисекунды и точностью 99,7%.",
-    icon: "globe",
-    badge: "Точность",
+    title: "AI-обработка текста",
+    description: "Искусственный интеллект анализирует информацию, выделяет главное и создаёт структурированный конспект по твоему шаблону.",
+    icon: "Sparkles",
+    badge: "AI",
   },
   {
-    title: "Предиктивная калибровка",
-    description: "ML-модели, которые предугадывают намерения пользователя и оптимизируют нейронные пути.",
-    icon: "zap",
-    badge: "Умный",
+    title: "Гибкие шаблоны",
+    description: "Создавай шаблоны с нуля или изменяй готовые — под лекции, встречи, вебинары. Делись с аудиторией одной ссылкой.",
+    icon: "LayoutTemplate",
+    badge: "Шаблоны",
   },
   {
-    title: "Биометрическая интеграция",
-    description: "Бесшовная синхронизация с мониторингом жизненных показателей для контроля здоровья.",
-    icon: "link",
-    badge: "Связь",
+    title: "Синхронизация и совместная работа",
+    description: "Доступ к конспектам с любого устройства. Создавай общие пространства для групп и команд.",
+    icon: "Users",
+    badge: "Командная работа",
   },
   {
-    title: "Поддержка XR",
-    description: "Нативная совместимость с AR/VR-средами для терапевтических и рабочих приложений.",
-    icon: "target",
-    badge: "XR Ready",
+    title: "Работа без интернета",
+    description: "Сохраняй записи и конспекты даже без сети. AI-анализ запустится автоматически при подключении.",
+    icon: "WifiOff",
+    badge: "Офлайн",
   },
 ]
 
 export function FeaturesSection() {
   return (
-    <section className="py-24 px-6 bg-background">
+    <section id="features" className="py-24 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4 font-sans">Возможности нового поколения</h2>
+          <h2 className="text-4xl font-bold text-foreground mb-4 font-sans">Всё что нужно — в одном приложении</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Почувствуйте будущее с технологиями, которые переопределяют возможное
+            Забудь про рукописные конспекты и пропущенные моменты. MyNotes делает всё за тебя — бесплатно.
           </p>
         </div>
 
@@ -60,14 +61,7 @@ export function FeaturesSection() {
             >
               <CardHeader>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-3xl">
-                    {feature.icon === "brain" && "&#129504;"}
-                    {feature.icon === "lock" && "&#128274;"}
-                    {feature.icon === "globe" && "&#127760;"}
-                    {feature.icon === "zap" && "&#9889;"}
-                    {feature.icon === "link" && "&#128279;"}
-                    {feature.icon === "target" && "&#127919;"}
-                  </span>
+                  <Icon name={feature.icon} size={32} className="text-red-500" fallback="Star" />
                   <Badge variant="secondary" className="bg-accent text-accent-foreground">
                     {feature.badge}
                   </Badge>
